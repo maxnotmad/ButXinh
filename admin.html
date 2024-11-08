@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/base.css">
+
+    <link rel="stylesheet" href="/css/admin.css">
+
+    <!-- flatpickr -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"> -->
+
+</head>
+
+<body>
+    <div class="app">
+        <div class="sidebar">
+            <div class="info__detail">
+                <div class="info__container">
+                    <img class="info__img" src="/img/profile.png" alt="">
+                    <div class="info__hello">Xin chào</div>
+                    <p class="info__name">Họ và tên</p>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <div class="nav-links__container">
+                    <li class="nav-links__item" data-value="trang-chu">
+                        <img class="nav-links__img" width="35" height="35"
+                            src="https://img.icons8.com/ios/50/dashboard.png" alt="dashboard" />
+                        <span class="nav-links__name">Trang chủ</span>
+                    </li>
+                    <li class="nav-links__item" data-value="ql-hoadon">
+                        <img class="nav-links__img" width="35" height="35"
+                            src="https://img.icons8.com/ios/35/invoice.png" alt="invoice" />
+                        <span class="nav-links__name">Quản lý hóa đơn</span>
+                    </li>
+                    <li class="nav-links__item" data-value="ql-sanpham">
+                        <img class="nav-links__img" width="35" height="35"
+                            src="https://img.icons8.com/ios/50/product--v1.png" alt="product--v1" />
+                        <span class="nav-links__name">Quản lý sản phẩm</span>
+                    </li>
+                    <li class="nav-links__item" data-value="ql-nguoidung">
+                        <img class="nav-links__img" width="35" height="35"
+                            src="https://img.icons8.com/ios/50/000000/user--v1.png" alt="user--v1" />
+                        <span class="nav-links__name">Quản lý khách hàng</span>
+                    </li>
+                </div>
+                <div class="nav-links__change">
+                    <li class="nav-links__item" data-value="product-page">
+                        <a href="./index.html" class="active" id="redirect-product-page">
+                            <img class="nav-links__img" width="35" height="35"
+                                src="https://img.icons8.com/ios-glyphs/35/sell-stock.png" alt="sell-stock" />
+                            <span class="nav-links__name">Trang bán hàng</span>
+                        </a>
+                    </li>
+                    <li class="nav-links__item">
+                        <a href="./index.html" class="active" id="log-out-btn" onclick="User.logOut()">
+                            <img class="nav-links__img" width="35" height="35"
+                                src="https://img.icons8.com/ios-filled/35/open-pane.png" alt="open-pane" />
+                            <span class="nav-links__name">Đăng xuất</span>
+                        </a>
+                    </li>
+                </div>
+            </ul>
+        </div>
+        <div id="content">
+            <div class="top-line">
+                <h1 class="top-line__heading">CHỌN CHỨC NĂNG Ở THANH MENU TAY TRÁI MÀN HÌNH</h1>
+            </div>
+            
+
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="./js/admin/constructor.js"></script>
+        <script src="./js/admin/dataProduct.js"> </script>
+        <script src="./js/admin/dataUser.js"></script>
+        <script src="./js/admin/localStorage.js"></script>
+        <script src="./js/admin/admin.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> -->
+</body>
+
+
+</html>
