@@ -1,14 +1,6 @@
 const usernameLabel = $('.info__name')
 const contentContainer = $('#content')
 const listControlItems = $$('.nav-links__item')
-// function loadForm() {
-//     const userID = User.checkLoginId()
-//     const username = User.getUserID(userID)
-//     usernameLabel.innerText = username.full_name
-// }
-
-// loadForm()
-
 
 Array.from(listControlItems).forEach((item) => {
     item.addEventListener('click', () => {
@@ -16,6 +8,7 @@ Array.from(listControlItems).forEach((item) => {
         if (activeItem) {
             activeItem.classList.remove('active')
         }
+        //Trang chủ admin
         if (item.getAttribute('data-value') === 'trang-chu') {
             item.classList.add('active')
             contentContainer.innerHTML =
@@ -127,6 +120,7 @@ Array.from(listControlItems).forEach((item) => {
             initDashboardPage()
 
         }
+        //Quan ly khach hang
         if (item.getAttribute('data-value') === 'ql-nguoidung') {
             item.classList.add('active')
             contentContainer.innerHTML =
@@ -258,7 +252,7 @@ Array.from(listControlItems).forEach((item) => {
                     <tbody class="product-table__list">
                         <tr class="product-table__row product-table__row--clicked">
                             <td>1</td>
-                            <td>Samsung Galaxy S23 Ultra 256GB</td>
+                            <td>Bút bi - Eco Style Thiên Long TL-08/ECO</td>
                             <td>10000000</td>
                             <td>9000000</td>
                             <td>Đã xử lý</td>
@@ -275,6 +269,7 @@ Array.from(listControlItems).forEach((item) => {
             `
             initUserPage()
         }
+        //Quản lý sản phẩm
         if (item.getAttribute('data-value') === 'ql-sanpham') {
             item.classList.add('active')
 
@@ -319,113 +314,84 @@ Array.from(listControlItems).forEach((item) => {
                         <div class="form-group">
                             <label for="product-name" class="form-label">Tên SP</label>
 
-                            <input id="product-name" name="product-name" type="text" placeholder="VD: Samsung Galaxy S23 Ultra 256GB"
+                            <input id="product-name" name="product-name" type="text" placeholder="VD: Bút bi - Eco Style Thiên Long TL-08/ECO"
                                 class="form-control">
 
                             <span class="form-message"></span>
                         </div>
                         <div class="form-group">
-                            <label for="product-price-old" class="form-label">Giá trước KM</label>
+                            <label for="product-price" class="form-label">Giá</label>
 
-                            <input id="product-price-old" name="product-price-old" type="text"
-                                placeholder="VD: 31990000" class="form-control">
-
-                            <span class="form-message"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="product-price-current" class="form-label">Giá sau KM</label>
-
-                            <input id="product-price-current" name="product-price-current" type="text"
-                                placeholder="VD: 22190000" class="form-control">
+                            <input id="product-price" name="product-price" type="text"
+                                placeholder="VD: 5000" class="form-control">
 
                             <span class="form-message"></span>
                         </div>
                         <div class="form-group">
                             <label for="product-brand" class="form-label">Brand</label>
                             <select name="product-brand" id="product-brand" class="form-control">
-                                <option value="Iphone">Iphone</option>
-                                <option value="Samsung">Samsung</option>
-                                <option value="Oppo">Oppo</option>
-                                <option value="Xiaomi">Xiaomi</option>
-                                <option value="Vivo">Vivo</option>
-                                <option value="Realme">Realme</option>
-                                <option value="Nokia">Nokia</option>
-                                <option value="Masstel">Masstel</option>
-                                <option value="Itel">Itel</option>
-                                <option value="Mobell">Mobell</option>
+                                <option value="Thiên Long">Thiên Long</option>
+                                <option value="Hồng Hà">Hồng Hà</option>
+                                <option value="Bến Nghé">Bến Nghé</option>
                             </select>
                             <span class="form-message"></span>
                         </div>
+                        <!-- Form Group for Kích thước Ngòi Bút -->
                         <div class="form-group">
-                            <label for="product-sale" class="form-label">Phần trăm KM</label>
+                            <label class="form-label">Kích thước Ngòi Bút</label>
+                            <div class="checkbox-group checkbox-group-size">
+                                <input type="checkbox" id="size-05mm" name="size-05mm" class="form-checkbox" data-value="0.5mm">
+                                <label for="size-05mm">0.5mm</label>
 
-                            <input id="product-sale" name="product-sale" type="text" placeholder="VD: 30"
-                                class="form-control">
+                                <input type="checkbox" id="size-06mm" name="size-06mm" class="form-checkbox" data-value="0.6mm">
+                                <label for="size-06mm">0.6mm</label>
 
-                            <span class="form-message"></span>
-                        </div>
-                        <!-- Form Group for ROM -->
-                        <div class="form-group">
-                            <label class="form-label">ROM</label>
-                            <div class="checkbox-group checkbox-group-rom">
-                                <input type="checkbox" id="rom-16gb" name="rom-16gb" class="form-checkbox" data-value="16 GB">
-                                <label for="rom-16gb">16 GB</label>
+                                <input type="checkbox" id="size-07mm" name="size-07mm" class="form-checkbox" data-value="0.7mm">
+                                <label for="size-07mm">0.7mm</label>
 
-                                <input type="checkbox" id="rom-32gb" name="rom-32gb" class="form-checkbox" data-value="32 GB">
-                                <label for="rom-32gb">32 GB</label>
+                                <input type="checkbox" id="size-1mm" name="size-1mm" class="form-checkbox" data-value="1mm">
+                                <label for="size-1mm">1mm</label>
 
-                                <input type="checkbox" id="rom-64gb" name="rom-64gb" class="form-checkbox" data-value="64 GB">
-                                <label for="rom-64gb">64 GB</label>
-
-                                <input type="checkbox" id="rom-128gb" name="rom-128gb" class="form-checkbox" data-value="128 GB">
-                                <label for="rom-128gb">128 GB</label>
-
-                                <input type="checkbox" id="rom-256gb" name="rom-256gb" class="form-checkbox" data-value="256 GB">
-                                <label for="rom-256gb">256 GB</label>
-
-                                <input type="checkbox" id="rom-512gb" name="rom-512gb" class="form-checkbox" data-value="512 GB">
-                                <label for="rom-512gb">512 GB</label>
-
-                                <input type="checkbox" id="rom-1tb" name="rom-1tb" class="form-checkbox" data-value="1 TB">
-                                <label for="rom-1tb">1 TB</label>
+                                <input type="checkbox" id="size-2mm" name="size-2mm" class="form-checkbox" data-value="2mm">
+                                <label for="size-2mm">2mm</label>
 
                             </div>
                             <span class="form-message"></span>
                         </div>
 
-                        <!-- Form Group for RAM -->
+                        <!-- Form Group for Loại Bút -->
                         <div class="form-group">
-                            <label class="form-label">RAM</label>
-                            <div class="checkbox-group checkbox-group-ram">
-                                <input type="checkbox" id="ram-1gb" name="ram-1gb" class="form-checkbox" data-value="1 GB">
-                                <label for="ram-1gb">1 GB</label>
+                            <label class="form-label">Loại Bút</label>
+                            <div class="checkbox-group checkbox-group-type">
+                                <input type="checkbox" id="type-long" name="type-long" class="form-checkbox" data-value="Lông">
+                                <label for="type-long">Lông</label>
 
-                                <input type="checkbox" id="ram-2gb" name="ram-2gb" class="form-checkbox" data-value="2 GB">
-                                <label for="ram-2gb">2 GB</label>
+                                <input type="checkbox" id="type-bi" name="type-bi" class="form-checkbox" data-value="Bi">
+                                <label for="type-bi">Bi</label>
 
-                                <input type="checkbox" id="ram-3gb" name="ram-3gb" class="form-checkbox" data-value="3 GB">
-                                <label for="ram-3gb">3 GB</label>
-
-                                <input type="checkbox" id="ram-4gb" name="ram-4gb" class="form-checkbox" data-value="4 GB">
-                                <label for="ram-4gb">4 GB</label>
-
-                                <input type="checkbox" id="ram-6gb" name="ram-6gb" class="form-checkbox" data-value="6 GB">
-                                <label for="ram-6gb">6 GB</label>
-
-                                <input type="checkbox" id="ram-8gb" name="ram-8gb" class="form-checkbox" data-value="8 GB">
-                                <label for="ram-8gb">8 GB</label>
-
-                                <input type="checkbox" id="ram-12gb" name="ram-12gb" class="form-checkbox" data-value="12 GB">
-                                <label for="ram-12gb">12 GB</label>
+                                <input type="checkbox" id="type-chi" name="type-chi" class="form-checkbox" data-value="Chì">
+                                <label for="type-chi">Chì</label>
 
                             </div>
                             <span class="form-message"></span>
                         </div>
+
+                        <!-- Form Group for Màu Mực -->
+                        <div class="form-group">
+                            <label for="product-color">Màu mực</label>
+                            <div class="checkbox-group-color">
+                                <label><input type="checkbox" value="Xanh"> Xanh</label>
+                                <label><input type="checkbox" value="Đen"> Đen</label>
+                                <label><input type="checkbox" value="Đỏ"> Đỏ</label>
+                            </div>
+                        </div>
+
+                        <!-- Form Group for Hình Ảnh -->
                         <div class="form-group form-group--full">
                             <label for="product-img" class="form-label">Ảnh (Nhập đường dẫn)</label>
 
                             <input id="product-img" name="product-img" type="text"
-                                placeholder="VD: https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:80/plain/https://cellphones.com.vn/media/catalog/product/s/a/samsung-galaxy-s23-ultra.png"
+                                placeholder="VD: https://example.com/images/but-bi-thien-long.png"
                                 class="form-control">
                             <span class="form-message"></span>
                         </div>
@@ -444,12 +410,11 @@ Array.from(listControlItems).forEach((item) => {
                     <tr class="product-table__heading">
                         <th>Mã SP</th>
                         <th>Tên SP</th>
-                        <th>Giá ban đầu</th>
-                        <th>Giá sau KM</th>
-                        <th>% KM</th>
+                        <th>Giá</th>
+                        <th>Loại Bút</th>
+                        <th>Kích Thước Ngòi</th>
+                        <th>Màu Mực</th>
                         <th>Brand</th>
-                        <th>RAM</th>
-                        <th>ROM</th>
                         <th>Link ảnh</th>
                         <th>Hành động</th>
                     </tr>
@@ -457,15 +422,14 @@ Array.from(listControlItems).forEach((item) => {
                 <tbody class="product-table__list">
                     <tr class="product-table__row">
                         <td>1</td>
-                        <td>Samsung Galaxy S23 Ultra 256GB</td>
-                        <td>10000000</td>
-                        <td>9000000</td>
-                        <td>10</td>
-                        <td>Samsung</td>
-                        <td>2GB, 3GB</td>
-                        <td>512GB, 1TB</td>
+                        <td>Bút Bi Eco Style Thiên Long TL-08/ECO</td>
+                        <td>15000</td>
+                        <td>Bi</td>
+                        <td>0.7mm</td>
+                        <td>Xanh</td>
+                        <td>Thiên Long</td>
                         <td><img class="product-table__img"
-                                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:80/plain/https://cellphones.com.vn/media/catalog/product/s/a/samsung-galaxy-s23-ultra.png"
+                                src="https://example.com/images/but-bi-thien-long.png"
                                 alt=""></td>
                         <td>
                             <button class="product-table__update-btn product-table-btn">Sửa</button>
@@ -570,9 +534,9 @@ Array.from(listControlItems).forEach((item) => {
                     <tbody class="product-table__list">
                         <tr class="product-table__row product-table__row--clicked">
                             <td>1</td>
-                            <td>Samsung Galaxy S23 Ultra 256GB</td>
-                            <td>10000000</td>
-                            <td>9000000</td>
+                            <td>2024-11-16 14:30</td>
+                            <td>KH001</td>
+                            <td>45,000 VND</td>
                             <td>Đã xử lý</td>
                             <td>
                                 <button class="product-table__see-btn product-table-btn">Xem</button>
@@ -661,7 +625,7 @@ const validate = {
     validateProductList: function (list) {
         let value = true;
         let message = 'Hợp lệ'
-        if (!list || list.length === 0) {
+        if (!list || list.length === '') {
             value = false;
             message = 'Phải chọn ít nhất 1 giá trị';
         }
@@ -772,77 +736,106 @@ function initProductPage() {
     renderProductToTable()
 
     function renderProductToTable() {
-        const tableBody = $('.product-table__list')
-        const productList = Product.getProducts()
-        let html = ''
-        if (productList) {
-            Array.from(productList).forEach(product => {
+        const tableBody = $('.product-table__list'); // Đảm bảo chọn đúng phần tử DOM
+        const productList = Product.getProducts(); // Lấy danh sách sản phẩm từ localStorage
+    
+        tableBody.innerHTML = '';;
+    
+        productList.forEach((product) => {
+            const row = document.createElement('tr');
+    
+            // Cột 1: ID
+            const idCell = document.createElement('td');
+            idCell.textContent = product.productID;
+    
+            // Cột 2: Tên sản phẩm
+            const nameCell = document.createElement('td');
+            nameCell.textContent = product.name;
+    
+            // Cột 3: Giá sản phẩm
+            const priceCell = document.createElement('td');
+            priceCell.textContent = `${product.price.toLocaleString()}₫`;
+    
+            // Cột 4: Loại bút
+            const typeCell = document.createElement('td');
+            typeCell.textContent = Array.isArray(product.type) ? product.type.join(', ') : '';
+    
+            // Cột 5: Kích thước ngòi
+            const sizeCell = document.createElement('td');
+            sizeCell.textContent = Array.isArray(product.size) ? product.size.join(', ') : '';
+    
+            // Cột 6: Màu mực
+            const colorCell = document.createElement('td');
+            colorCell.textContent = Array.isArray(product.color) ? product.color.join(', ') : '';
+    
+            // Cột 7: Thương hiệu
+            const brandCell = document.createElement('td');
+            brandCell.textContent = product.brand;
+    
+            // Cột 8: Hình ảnh
+            const imgCell = document.createElement('td');
+            const imgTag = document.createElement('img');
+            imgTag.src = product.img || 'placeholder.png'; // Đường dẫn ảnh mặc định nếu không có
+            imgTag.alt = product.name;
+            imgTag.style.width = '50px'; // Thiết lập kích thước ảnh nhỏ
+            imgCell.appendChild(imgTag);
+    
+            // Cột 9: Hành động
+            const actionCell = document.createElement('td');
 
-                html +=
-                    `
-                <tr class="product-table__row">
-                            <td>${product.productID}</td>
-                            <td>${product.name}</td>
-                            <td>${money.formatCurrencytoVND(product.price_old)}</td>
-                            <td>${money.formatCurrencytoVND(product.price_current)}</td>
-                            <td>${product.sale}</td>
-                            <td style="text-transform: capitalize;">${product.brand}</td>
-                            <td>${product.ram}</td>
-                            <td>${product.rom}</td>
-                            <td><img class="product-table__img" src="${product.img}" alt=""></td>
-                            <td>
-                                <button class="product-table__update-btn product-table-btn" data-product-id="${product.productID}">Sửa</button>
-                                <button class="product-table__delete-btn product-table-btn" data-product-id="${product.productID}">Xóa</button>
-                            </td>
-                        </tr>
-                `
-            })
-            tableBody.innerHTML = html
-            const productRowList = $$('.product-table__row')
-            Array.from(productRowList).forEach(row => {
-                const updateButton = row.querySelector('.product-table__update-btn')
-                const deleteButton = row.querySelector('.product-table__delete-btn')
-                updateButton.addEventListener('click', () => {
-                    const productID = updateButton.getAttribute('data-product-id')
-                    const productItem = Product.getProductID(parseInt(productID))
-                    renderProduct(productItem, true)
+            // Nút xóa
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = 'Xóa';
+            deleteBtn.addEventListener('click', () => deleteProduct(product.productID));
+            actionCell.appendChild(deleteBtn);
 
-                })
-
-                deleteButton.addEventListener('click', () => {
-                    const productID = deleteButton.getAttribute('data-product-id')
-                    const productItem = Product.getProductID(parseInt(productID))
-                    renderProduct(productItem, false)
-                    deleteProduct(parseInt(productID))
-                })
+            // Nút sửa
+            const editBtn = document.createElement('button');
+            editBtn.textContent = 'Sửa';
+            editBtn.addEventListener('click', () => editProduct(product.productID)); // Hàm sửa sản phẩm
+            actionCell.appendChild(editBtn);
 
 
-            })
-        }
+            // Thêm tất cả các ô vào hàng
+            row.appendChild(idCell);
+            row.appendChild(nameCell);
+            row.appendChild(priceCell);
+            row.appendChild(typeCell);
+            row.appendChild(sizeCell);
+            row.appendChild(colorCell);
+            row.appendChild(brandCell);
+            row.appendChild(imgCell);
+            row.appendChild(actionCell);
+    
+            // Thêm hàng vào bảng
+            tableBody.appendChild(row);
+        });
     }
-    let listROM = [];
-    let listRAM = [];
-    let productId = document.getElementById('product-id');
-    let productName = document.getElementById('product-name');
-    let productPriceOld = document.getElementById('product-price-old');
-    let productPriceCurrent = document.getElementById('product-price-current');
-    let productBrand = document.getElementById('product-brand');
-    let productSale = document.getElementById('product-sale');
-    let productIMG = document.getElementById('product-img');
-    let listROMCheckbox = $$('.checkbox-group-rom input[type="checkbox"]');
-    let listRAMCheckbox = $$('.checkbox-group-ram input[type="checkbox"]');
+    
+let listType = [];
+let listSize = [];
+let listColor = [];
+let productId = document.getElementById('product-id');
+let productName = document.getElementById('product-name');
+let productPrice = document.getElementById('product-price');
+let productBrand = document.getElementById('product-brand');
+let productSale = document.getElementById('product-sale');
+let productIMG = document.getElementById('product-img');
+let listTypeCheckbox = $$('.checkbox-group-type input[type="checkbox"]');  // Loại bút (Bi, Lông, Chì)
+let listSizeCheckbox = $$('.checkbox-group-size input[type="checkbox"]');  // Size bút (0.5mm, 0.7mm, 1mm, 2mm)
+let listColorCheckbox = $$('.checkbox-group-color input[type="checkbox"]'); // Màu bút (Xanh, Đen, Đỏ)
     function resetValue() {
         productId.value = '';
         productName.value = '';
-        productPriceOld.value = '';
-        productPriceCurrent.value = '';
+        productPrice.value = '';
         productBrand.selectedIndex = -1; // Bỏ chọn option trong select
-        productSale.value = '';
         productIMG.value = '';
-        listRAM = []
-        listROM = []
-        Array.from(listROMCheckbox).forEach(item => item.checked = false)
-        Array.from(listRAMCheckbox).forEach(item => item.checked = false)
+        listSize = [];
+        listType = [];
+        listColor = [];
+        Array.from(listTypeCheckbox).forEach(item => item.checked = false)
+        Array.from(listSizeCheckbox).forEach(item => item.checked = false)
+        Array.from(listColorCheckbox).forEach(item => item.checked = false);
         validate.hideAllErrMessage(listErrorMessage)
     }
     // Khi nhấn nút thêm thì active nút thêm
@@ -865,44 +858,69 @@ function initProductPage() {
 
 
     function addProduct() {
-        // Lấy giá trị của các input
-        Array.from(listROMCheckbox).forEach((item, index) => {
-            if (item.checked) {
-                listROM.push(romValues[index])
-            }
-        })
-        Array.from(listRAMCheckbox).forEach((item, index) => {
-            if (item.checked) {
-                listRAM.push(ramValues[index])
-            }
 
-        })
-        //Kiểm tra dữ liệu
-        // console.log(productPriceOld.value)
+        // Lấy các giá trị của các input
+        const productBrand = document.getElementById('product-brand'); // Lấy phần tử input
+        const productName = document.getElementById('product-name'); // Lấy tên sản phẩm
+        const productPrice = document.getElementById('product-price'); // Lấy giá
+        const productIMG = document.getElementById('product-img'); // Lấy link ảnh
+
+        let selectedType = [];
+        let selectedSize = [];
+        let selectedColor = [];
+    
+        // Lấy giá trị của các input
+        Array.from(listTypeCheckbox).forEach((item, index) => {
+            if (item.checked) {
+                selectedType.push(typeValues[index]); // Sử dụng selectedType
+            }
+        });
+        Array.from(listSizeCheckbox).forEach((item, index) => {
+            if (item.checked) {
+                selectedSize.push(sizeValues[index]); // Sử dụng selectedSize
+            }
+        });
+        Array.from(listColorCheckbox).forEach((item, index) => {
+            if (item.checked) {
+                selectedColor.push(colorValues[index]); // Sử dụng selectedColor
+            }
+        });
+    
+        // Kiểm tra dữ liệu
         const validateAndDisplayError = (input, errorMessageElement, validationFunction) => {
             const validationResult = validationFunction(input);
             if (!validationResult.value) {
                 validate.showErrMessage(errorMessageElement, validationResult.message);
-                return false
+                return false;
             } else {
                 validate.hideErrMessage(errorMessageElement);
-                return true
+                return true;
             }
         };
-        const isValidProductName = validateAndDisplayError(productName.value.toString(), listErrorMessage[1], validate.validateProductName);
-        const isValidProductPriceOld = validateAndDisplayError(productPriceOld.value, listErrorMessage[2], validate.validateProductInt);
-        const isValidProductPriceCurrent = validateAndDisplayError(productPriceCurrent.value, listErrorMessage[3], validate.validateProductInt);
-        const isValidProductSale = validateAndDisplayError(productSale.value, listErrorMessage[5], validate.validateProductInt);
-        const isValidListROM = validateAndDisplayError(listROM, listErrorMessage[6], validate.validateProductList);
-        const isValidListRAM = validateAndDisplayError(listRAM, listErrorMessage[7], validate.validateProductList);
-        const isValidBrand = validateAndDisplayError(productBrand.value.toString(), listErrorMessage[4], validate.validateValue)
-        if (isValidProductName && isValidProductPriceOld && isValidProductPriceCurrent && isValidProductSale && isValidBrand && isValidListROM && isValidListRAM) {
-            // Nếu không có lỗi, thêm sản phẩm
-            Product.addProduct(productName.value, productPriceOld.value, productPriceCurrent.value, productIMG.value, productBrand.value, listRAM, listROM, productSale.value);
+    
+        const isValidProductName = validateAndDisplayError(productName.value, listErrorMessage[1], validate.validateProductName);
+        const isValidProductPrice = validateAndDisplayError(productPrice.value, listErrorMessage[2], validate.validateProductInt);
+        const isValidBrand = validateAndDisplayError(productBrand.value, listErrorMessage[3], validate.validateValue);
+        const isValidListType = validateAndDisplayError(selectedType, listErrorMessage[4], validate.validateProductList);
+        const isValidListSize = validateAndDisplayError(selectedSize, listErrorMessage[5], validate.validateProductList);
+        const isValidListColor = validateAndDisplayError(selectedColor, listErrorMessage[6], validate.validateProductList);
+    
+        if (isValidProductName && isValidProductPrice && isValidBrand && isValidListType && isValidListSize && isValidListColor) {
+            // Lưu sản phẩm vào danh sách nếu không có lỗi
+            Product.addProduct(
+                productName.value,
+                parseFloat(productPrice.value), // Chuyển giá thành số
+                productIMG.value,
+                productBrand.value.toUpperCase(),
+                selectedType, // Thêm loại bút đã chọn
+                selectedSize, // Thêm kích thước ngòi đã chọn
+                selectedColor // Thêm màu mực đã chọn
+            );
             resetValue();
             renderProductToTable();
         }
     }
+    
     function renderProduct(productItem, isUpdate) {
         resetValue()
         //active cho thẻ sửa
@@ -920,8 +938,7 @@ function initProductPage() {
         //Render thông tin sản phẩm lên form
         productId.value = productItem.productID
         productName.value = productItem.name
-        productPriceCurrent.value = productItem.price_current
-        productPriceOld.value = productItem.price_old
+        productPrice.value = productItem.price
         productIMG.value = productItem.img
         const indexToSelect = Array.from(productBrand.options).findIndex(option => option.value.toLowerCase() === productItem.brand.toLowerCase());
         if (indexToSelect !== -1) {
@@ -930,23 +947,31 @@ function initProductPage() {
         } else {
             console.error(`Không tìm thấy option với giá trị ${productItem.brand}`);
         }
-        productSale.value = productItem.sale
-        Array.from(listROMCheckbox).forEach((item) => {
-            productItem.rom.forEach((value) => {
+
+        Array.from(listTypeCheckbox).forEach((item) => {
+            productItem.type.forEach((value) => {
                 if (item.getAttribute('data-value') === value) {
                     item.checked = true
-                    listROM.push(value)
+                    listType.push(value)
                 }
             })
         })
 
-        Array.from(listRAMCheckbox).forEach((item) => {
-            productItem.ram.forEach((value) => {
+        Array.from(listSizeCheckbox).forEach((item) => {
+            productItem.size.forEach((value) => {
                 if (item.getAttribute('data-value') === value) item.checked = true
-                listRAM.push(value)
+                listSize.push(value)
             })
         })
 
+        Array.from(listColorCheckbox).forEach((item) => {
+            productItem.color.forEach((value) => {
+                if (item.getAttribute('data-value') === value) {
+                    item.checked = true;  // Đánh dấu checkbox màu sắc đã chọn
+                    listColor.push(value);
+                }
+            });
+        });    
     }
 
     btnSave.addEventListener('click', (e) => {
@@ -976,28 +1001,41 @@ function initProductPage() {
         resetValue();
     })
     function updateProduct() {
-        listRAM = []
-        listROM = []
+        listType = [];
+        listSize = [];
+        listColor = [];
         //chỉnh sửa thông tin sản phẩm
-        Array.from(listROMCheckbox).forEach((item, index) => {
+        Array.from(listTypeCheckbox).forEach((item, index) => {
             if (item.checked) {
-                listROM.push(romValues[index])
+                listType.push(typeValues[index])
             }
         })
-        Array.from(listRAMCheckbox).forEach((item, index) => {
+        Array.from(listSizeCheckbox).forEach((item, index) => {
             if (item.checked) {
-                listRAM.push(ramValues[index])
+                listSize.push(sizeValues[index])
             }
 
         })
+        Array.from(listColorCheckbox).forEach((item, index) => {
+            if (item.checked) {
+                listColor.push(colorValues[index])
+            }
+        })
 
-        Product.updateProduct(productId.value, productName.value, productPriceOld.value, productPriceCurrent.value, productIMG.value, productBrand.value, listRAM, listROM, productSale.value)
+
+        Product.updateProduct(productId.value, productName.value, productPrice.value, productIMG.value, productBrand.value, listType, listSize, listColor)
     }
 
     function deleteProduct(productID) {
         if (confirm('Bạn có muốn xóa sản phẩm này?')) {
-            Product.deleteProduct(productID)
-            renderProductToTable()
+            const isDeleted = Product.deleteProduct(productID);  // Kiểm tra nếu sản phẩm được xóa thành công
+            
+            // Nếu sản phẩm đã bị xóa, render lại bảng
+            if (isDeleted) {
+                renderProductToTable();
+            } else {
+                alert("Xóa sản phẩm không thành công");
+            }        
         }
     }
 }

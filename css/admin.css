@@ -3,7 +3,7 @@
     position: fixed;
     height: 100%;
     width: 17%;
-    background-color: var(--white-color);
+    background-color: #5cacee;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.5s ease;
 }
@@ -63,11 +63,11 @@
 }
 
 .nav-links__item.active {
-    background-color: #F38377;
+    background-color: #c7e3ff;
 }
 
 .nav-links__item:hover {
-    background-color: #F38377;
+    background-color: #c7e3ff;
 }
 
 .nav-links__img {
@@ -101,7 +101,7 @@
 /* Heading */
 .top-line {
     /* width: 100%; */
-    background-color: var(--white-color);
+    background-color: #5cacee;
     border-bottom: 1px solid black;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     /* Thêm đường bóng */
@@ -132,17 +132,17 @@
 }
 
 .function__item.active {
-    background-color: var(--primary-color);
-    color: var(--white-color);
+    background-color: #5cacee;
+    color: #000000;
 }
 
 .function__item:hover {
     cursor: pointer;
     /* font-weight: 550; */
-    color: var(--white-color);
+    color: #000000;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    background-color: var(--primary-color);
+    background-color: #5cacee;
 
 }
 
@@ -196,7 +196,12 @@
 }
 
 .form-control:hover {
-    border: 2px solid var(--border-hover-color);
+    border: 2px solid #5cacee;
+}
+
+/* Viền input khi đang ở trạng thái active (focused) */
+.form-control:focus {
+    border-color: #5cacee; /* Thay đổi viền khi focus vào ô input */
 }
 
 .form-group.invalid .form-control {
@@ -248,13 +253,13 @@
     padding: 8px 20px;
     margin-right: 10px;
     background-color: var(--white-color);
-    border: none;
+    border: 2px solid #5cacee;
     border-radius: 5px;
     cursor: pointer;
 }
 
 #btn-save {
-    background-color: #49CB3F;
+    background-color: #5cacee;
 
 }
 
@@ -263,11 +268,11 @@
 }
 
 #btn-cancel {
-    border: 1px solid var(--primary-color);
+    border: 1px solid #5cacee;
 }
 
 #btn-cancel:hover {
-    background-color: var(--primary-color);
+    background-color:#5cacee;
 }
 
 /* Table */
@@ -275,13 +280,13 @@
     margin-top: 20px;
     width: 100%;
     border-collapse: collapse;
-    border: 3px solid var(--primary-color);
+    border: 3px solid #5cacee;
     border-radius: 4px;
     text-align: center;
 }
 
 #product-table .product-table__heading {
-    color: var(--primary-color);
+    color: #5cacee;
     background-color: transparent;
     text-align: center;
     font-size: 1.5rem;
@@ -339,7 +344,7 @@ td:nth-child(8) {
     margin: 0 3px;
     padding: 6px 10px;
     background-color: var(--white-color);
-    border: 1px solid var(--primary-color);
+    border: 2px solid #5cacee;
     border-radius: 4px;
 }
 

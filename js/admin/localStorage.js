@@ -1,8 +1,9 @@
 
 
 //Load data lên localStorage
-if (Product.getProducts() === null) {
-    Product.loadProducts(productArr);
+if (Product.getProducts().length === 0) {
+    const initialProducts = []; // Khởi tạo danh sách sản phẩm nếu cần
+    Product.loadProducts(initialProducts);
 }
 
 if(User.checkLoginId() === null){
